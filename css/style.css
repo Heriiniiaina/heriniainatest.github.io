@@ -1,0 +1,663 @@
+@font-face {
+    font-family: roboto;
+    src: url(../font/Roboto-Thin.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth !important;
+   
+    font-family: 'roboto';
+
+    
+}
+::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to right, rgb(41, 66, 255),rgb(0, 20, 173));
+    border-radius: 2px;
+}
+/*Page acceuil*/
+
+/*barre de navigation*/
+.tete{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-left: 30px;
+}
+.connecter{
+    display: flex;
+    
+}
+.connecter li{
+    margin-left: 10px;
+    list-style-type: none;
+}
+
+.connecter li a{
+    text-decoration: none;
+    color: black;
+    margin-right: 30px;
+}
+.connecter li a i{
+    margin-right: 5px;
+}
+.BarreDeNavigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    /* background-color: rgb(18, 45, 255); */
+    background: linear-gradient(to right, rgb(24, 51, 255),rgb(0, 19, 161));
+    color: white;
+
+    position: sticky;
+    top: 0;
+}
+.navigation .nav{
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.navigation .nav li{
+    list-style-type: none;
+    margin-left: 20px;
+}
+.navigation .nav li a{
+    text-decoration: none;
+    color: white;
+    
+    position: relative;
+}
+.navigation ul.nav li a:hover{
+    color: grey;
+}
+.navigation ul.nav li a::before{
+    position: absolute;
+    top: -1px;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius:6px;
+    background-color: green;
+    transition: 0.5s;
+}
+.navigation ul.nav li a::before:hover{
+    width: 100%;
+}
+.nav select{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 17px;
+    width: 85px;
+}
+.nav select:hover{
+    color: grey;
+    cursor: pointer;
+    
+}
+.nav select option{
+    color: black;
+}
+.barreDeRecherche input{
+    width: 150px;
+    outline: 0;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+}
+.barreDeRecherche button{
+    border-radius: 5px;
+    background-color: yellow;
+    border: none;
+    padding: 4px;
+}
+.barreDeRecherche button:hover{
+    cursor: pointer;
+}
+
+/*Acceuil*/
+.accueil{
+    background: linear-gradient(to right, rgb(245, 245, 245),rgb(202, 202, 202));
+}
+.accueil .contenant-accueil{
+    display: flex;
+    align-items: center;
+    padding: 0% 5%;
+    color: grey;
+}
+.accueil .nosProduits{
+    display: flex;
+    justify-content: center;
+    margin: 32px 0px;
+    padding: 20px;
+    align-items: center;
+}
+.accueil .nosProduits h2{
+    color: rgb(24, 51, 255);
+    margin-right: 35px;
+    padding: 12px;
+    border-radius: 5px;
+    
+}
+.accueil .nosProduits a{
+    color: white;
+    background: linear-gradient(to right, rgb(24, 51, 255),rgb(0, 19, 161));
+    padding: 18px 22px;
+    border-radius: 50%;
+}
+
+.accueil .texte h3,p,button{
+    margin-top: 10px;
+}
+.accueil .texte h1{
+    color: rgb(24, 51, 255);
+    font-size: 3rem;
+}
+.accueil .texte h3{
+    color: rgb(24, 51, 255);
+    font-size: 2rem;
+}
+.accueil .texte button{
+    background: linear-gradient(to right, rgb(24, 51, 255),rgb(0, 19, 161));
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+/*Produits*/
+.appareil{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 15px 35px;
+    margin-top: 20px;
+    align-items: center;
+    width: 100%;
+    color: white;
+    background: linear-gradient(to right, rgb(24, 51, 255),rgb(0, 19, 161));
+}
+.appareil h3{
+    color: white;
+    font-size: 40px;
+    margin-left: 80px;
+}
+.appareil p{
+    color: grey;
+}
+.appareil a{
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgb(24, 51, 255);
+    position: absolute;
+    margin-top: 15px;
+}
+
+.produits h2{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    font-size: 3rem;
+    padding: 20px;
+}
+.btn{
+    display: none;
+}
+/* .produits hr{
+    color: rgb(221, 221, 4) !important;
+    height: 3px;
+    background-color: rgb(221, 221, 4) !important;;
+    border: none;
+} */
+.listproduit{
+    display: flex;
+    overflow-x: auto;
+    width: 85%;
+    margin: auto;
+    padding: 50px 0px 20px 0px;
+}
+.listproduit .produit{
+    width: 200px;
+    padding: 5px;
+    border: 1px solid rgb(197, 192, 192);
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
+    font-size: 10px;
+
+    transition: .15s;
+}
+
+/* anim */
+.listproduit .produit img{
+    transition: .15s;
+}
+
+.listproduit .produit:hover{
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.623);
+    cursor: pointer;
+    background: linear-gradient(to right, rgb(46, 71, 255),rgb(0, 26, 221));
+    color: white;
+}
+.listproduit .produit img:hover{
+    transform: scale(1.1);
+    
+}
+
+/* anim */
+.listproduit .produit .nom{
+    font-size: 13px;
+    text-align: center;
+}
+.listproduit .produit .descri{
+    font-size: 10px;
+    text-align: center;
+}
+.listproduit .produit .etoile{
+    margin-top: 10px;
+    color: rgb(226, 178, 19);
+    text-align: center;
+}
+.listproduit .produit .prix{
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+}
+.listproduit .produit img{
+    width: 150px;
+}
+.prix{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.infos .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 2% 15%; */
+    padding: 70px 100px 50px 100px;
+    text-align: center;
+}
+.infos .info div .fa{
+    font-size: 25px;
+}
+.appEM{
+    width: 300px;
+}
+/*pied de la page*/
+
+footer{
+    background: linear-gradient(to right, rgb(24, 51, 255),rgb(0, 19, 161));
+}
+footer .pied{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    
+}
+footer .pied h4{
+    color: #d2d2d2;
+    font-size: 2rem;
+}
+footer .pied  li{
+    list-style-type: none;
+    color: white;
+}
+footer .pied  p{
+    color: white;
+}
+footer .pied div div{
+    margin-top: 15px;
+    line-height: 25px;
+}
+footer .pied div div .fa:nth-child(1){
+    padding: 8px 12px;
+}
+
+footer .pied div div .fa{
+    font-size: 20px;
+    margin-top: 20px;
+    align-items: center;
+    border-radius: 40%;
+    background-color: white;
+    padding: 8px;
+    margin: 0px 10px;
+
+    cursor: pointer;
+}
+
+footer .pied .logo-r{
+
+    text-align: center;
+
+}
+/*page apropos*/
+.apropos{
+    padding: 2% 5%;
+}
+.apropos h1{
+    margin-bottom: 10px;
+    color: #ffc800;
+}
+.apropos p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.description {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    align-items: center;
+}
+.description div:nth-child(2) button{
+   padding: 5px;
+   color: white;
+   background-color: rgb(24, 51, 255);
+   border-radius: 5px; 
+   border: none;
+}
+.description div:nth-child(2) button:hover{
+    cursor: pointer;
+}
+
+/****************************  page contact  ********************************/
+.contact .listContact{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 10%;
+    
+}
+.contact .listContact div i{
+    color: rgb(24, 51, 255);
+}
+.contact .listContact .phone p{
+    color: black;
+}
+.contact .listContact div{
+    border: 1px solid rgba(68, 68, 68, 0.959);
+    padding: 20px 40px;
+    box-shadow: 2px 2px 2px black;
+    width: 300px;
+}
+.contact .information{
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 10%;
+    color: rgb(24, 51, 255);
+}
+.contact .information input{
+    width: 300px;
+    height: 35px;
+}
+.contact .message{
+    display: flex;
+   
+    padding: 1% 10%;
+}
+.contact textarea{
+    resize: none;
+}
+.contact button{
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid rgb(24, 51, 255);
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    border-radius: 3px;
+}
+.contact button:hover{
+    cursor: pointer;
+    background-color: rgb(24, 51, 255);
+    color: white;
+}
+footer{
+    margin-top: 50px;
+}
+
+
+/* Responsive */
+@media screen and (max-width:1100px) {
+
+    .accueil img{
+        width: 400px;
+    }
+   
+}
+@media screen and (max-width:900px) {
+
+    .accueil img{
+        width: 370px;
+    }
+    .accueil .texte h1{
+        font-size: 2rem;
+    }
+    .accueil .texte h3{
+        font-size: 1.6rem;
+    }
+    .accueil .texte p{
+        font-size: 14px;
+    }
+
+    .appareil h3{
+        font-size: 30px;
+        margin-left: 60px;
+    }
+    .contact .listContact{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .contact .listContact div{
+        margin-bottom: 30px;
+    }
+    .contact .information{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .contact .information input{
+        margin-bottom: 30px;
+    }
+   
+}
+
+
+
+@media screen and (max-width:760px) {
+    header .tete p{
+        font-size: 14px;
+    }
+    .btn{
+        display: block;
+        z-index: 99;
+        font-size: 20px;
+        
+    }
+    .BarreDeNavigation{
+        align-items: center;
+    }
+    .fa-times{
+        display: none;
+    }
+    .responsive .fa-times{
+        display: block;
+    }
+    .responsive .fa-bars{
+        display: none;
+    }
+    .navigation{
+        position: absolute;
+        top: 0;
+        left: 0;
+       
+    }
+
+    .nav{
+        transform: translateX(-100%);
+        transition: .5s;
+        display: flex;
+        height: 90vh;
+        background: linear-gradient(to right, rgb(24, 51, 255),rgb(0, 19, 161));
+        width: 450px;
+        flex-direction: column;
+        line-height: 90px; 
+        justify-content: center;
+        border-radius: 0 0 6px 0;
+       
+    }
+    .responsive .nav{
+      
+       
+        transform: translateX(0%);
+        transition: all .5s;
+        
+    }
+    
+    .accueil img{
+        width: 360px;
+    }
+    .accueil .texte h1{
+        font-size: 1.9rem;
+    }
+    .accueil .texte h3{
+        font-size: 1.4rem;
+    }
+    .accueil .texte p{
+        font-size: 14px;
+    }
+
+    .appareil h3{
+        font-size:25px;
+        margin-left: 50px;
+    }
+    .accueil {
+        padding: 50px;
+    }
+
+    .accueil img{
+        display: none;
+    }
+    .accueil .texte h1{
+        font-size: 50px;
+    }
+    .accueil .texte h3{
+        font-size: 30px;
+    }
+    .accueil .texte button{
+        padding: 10px;
+    }
+    .accueil .texte p{
+        font-size: 16px;
+    }
+
+    .accueil .nosProduits{
+        display: none;
+    }
+
+
+
+    /* footer */
+
+    footer .pied h4{
+        font-size: 20px;
+    }
+    footer .pied ul li{
+        font-size: 12px;
+    }
+    footer .pied div p{
+        font-size: 12px;
+    }
+    footer .pied div div .fa{
+        padding: 4px;
+        margin: 0px 7px;
+    }
+    footer .pied div div .fa:nth-child(1){
+        padding: 4px 8px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    header .tete p{
+        font-size: 12px;
+    }
+
+@media screen and (max-width:450px){
+    body{
+        overflow-x: hidden !important;
+         width: 450px;
+    }
+    header .tete p{
+        font-size: 10px;
+    }
+    .listproduit{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .listproduit .produit img{
+        width: 70px;
+    
+    }
+    .listproduit .produit{
+        text-align: center;
+        width: 170px;
+        height: 200px;
+        margin: 10px;
+    }
+
+    .infos .info{
+        display: flex;
+        flex-wrap: wrap;
+
+        font-size: 12px;
+    }
+    .infos .info div{
+        margin: 20px 10px;
+    }
+
+
+    /* foot */
+
+    footer .pied{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    footer .pied div{
+        margin: 10px 0px;
+    }
+    footer .pied p{
+        font-size: 14px;
+    }
+}
+
+}
+
